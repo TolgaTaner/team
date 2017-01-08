@@ -114,7 +114,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kug-7h-4eP">
-                                <rect key="frame" x="16" y="637" width="341" height="30"/>
+                                <rect key="frame" x="16" y="587" width="341" height="30"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="qF2-lM-LeJ"/>
@@ -127,13 +127,13 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="39s-T9-Daa">
-                                <rect key="frame" x="0.0" y="25" width="375" height="617"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="39s-T9-Daa">
+                                <rect key="frame" x="177.66666666666666" y="323.66666666666669" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Kug-7h-4eP" secondAttribute="bottom" id="CWn-Go-MZa"/>
+                            <constraint firstAttribute="bottom" secondItem="Kug-7h-4eP" secondAttribute="bottom" constant="50" id="CWn-Go-MZa"/>
                             <constraint firstItem="39s-T9-Daa" firstAttribute="centerX" secondItem="tvc-Dt-Rlr" secondAttribute="centerX" id="OhW-2T-ENq"/>
                             <constraint firstItem="39s-T9-Daa" firstAttribute="centerY" secondItem="tvc-Dt-Rlr" secondAttribute="centerY" id="S4y-IO-IS3"/>
                             <constraint firstAttribute="trailing" secondItem="KIA-SR-tXE" secondAttribute="trailing" id="UXI-ae-D7E"/>
