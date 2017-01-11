@@ -102,7 +102,7 @@ class EditFlatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let vc = EditPhotoViewController()
+       
         
         
         addressTextView.text = editingFlat.address
@@ -118,14 +118,8 @@ class EditFlatViewController: UIViewController {
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "flatPhotoSegue" {
-            
-            if let controller :EditPhotoViewController = segue.destination as? EditPhotoViewController {
-             
-                controller.flat = editingFlat
-            
-        }
-        }
+     
+        
         if segue.identifier == "flatOptionSegue" {
             
             
