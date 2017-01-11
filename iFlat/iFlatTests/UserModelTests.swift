@@ -7,9 +7,12 @@
 //
 
 import XCTest
+import Firebase
 @testable import iFlat
 
 class UsermodelTests: XCTestCase {
+   
+    let endpoint = FIRUSER()
     override func setUp() {
         super.setUp()
     }
@@ -19,8 +22,9 @@ class UsermodelTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testExample() {       
     }
+    
     
     func testPerformanceExample() {
         // This is an example of a performance test case.

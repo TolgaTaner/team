@@ -62,14 +62,7 @@ class RenterEditOwnProfieController: UIViewController {
         }
     }
     
-    @IBOutlet weak var mailAddressTextField: UITextField!{
-        
-        didSet {
-            mailAddressTextField.delegate = self
-        }
-    }
-    
-
+ 
   
     
     @IBOutlet weak var renterPhotoImageView: UIImageView!{
@@ -188,19 +181,7 @@ class RenterEditOwnProfieController: UIViewController {
     }
     }
     
-    /// This method provides to edit renter's email address.
-    /// if renter has logged in the system,renter can change own email address with this method.
-    @IBAction func mailAddressTextFieldEditingDidEnd(_ sender: UITextField) {
-       if sender.text != "" {
-            
-            loginUser.email = sender.text
-        }
-       else{
-        
-        loginUser.email = mailAddressTextField.placeholder
-        }
-       
-    }
+
     
     
     
@@ -210,7 +191,6 @@ class RenterEditOwnProfieController: UIViewController {
     @IBAction func editedProfileButtonAction(_ sender: Any) {
         
      dbFirebase.edit(newUsr: self.loginUser) { (err) in
-        print(err)
       self.navigationController?.popViewController(animated: true)
         }
         
@@ -252,7 +232,6 @@ class RenterEditOwnProfieController: UIViewController {
                 
                 self.nameTextField.placeholder = self.loginUser.name
                 self.surnameTextField.placeholder = self.loginUser.surname
-                self.mailAddressTextField.placeholder = self.loginUser.email
                 self.birthdateDatePicker.setDate(Date(dateString:self.loginUser.birthDate!), animated: false)
                                 
                       self.dbFirebase.getUserProfileImg(user: self.loginUser, completion: { (userImageUrl) in
@@ -266,6 +245,11 @@ class RenterEditOwnProfieController: UIViewController {
                             
                       
                       })
+                        for (index,city) in self.cities.enumerated(){
+                            if city == self.loginUser.country{
+                                self.countyPickerView.selectRow(index, inComponent: 0, animated: true)
+                            }
+                        }
                               
                 
             })

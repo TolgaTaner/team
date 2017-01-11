@@ -18,7 +18,7 @@ class EditFlatOptionViewController: UIViewController {
     
       var dbFirebase = FIRUSER()
     
-    var cities = [String]()
+   
     
     
     var editingFlatOptions = Flat()
@@ -127,16 +127,11 @@ class EditFlatOptionViewController: UIViewController {
             
          
             
-            scrollView.contentSize.height = 1300
+            scrollView.contentSize.height = 1200
+            
         }
     }
-    
-    @IBOutlet weak var cityPicker: UIPickerView!{
-        didSet{
-            cityPicker.delegate = self
-            cityPicker.dataSource = self
-        }
-    }
+ 
  
     @IBAction func heatingValueChanged(_ sender: UISwitch) {
               editingFlatOptions.heating = sender.isOn
@@ -181,11 +176,6 @@ class EditFlatOptionViewController: UIViewController {
         super.viewDidLoad()
 
         
-        dbFirebase.getCities { (allCities) in
-            self.cities = allCities
-            
-            self.cityPicker.reloadAllComponents()
-        }
         
       
        
@@ -200,6 +190,9 @@ class EditFlatOptionViewController: UIViewController {
 
     
     
+    @IBAction func DoneButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
     
@@ -395,46 +388,4 @@ class EditFlatOptionViewController: UIViewController {
             
     }
     }
-}
-
-extension EditFlatOptionViewController : UIPickerViewDelegate,UIPickerViewDataSource {
-    
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
-            return cities.count
-            
-        
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-     
-        editingFlatOptions.city = cities[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        var data:String!
-        
-        var label = view as! UILabel!
-        if label == nil {
-            label = UILabel()
-        }
-        
-        
-        data = cities[row]
-        
-        let title = NSAttributedString(string: data!, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14.0)])
-        
-        label?.attributedText = title
-        label?.textAlignment = .center
-        
-        
-        return label!
-        
-        
-    }
-
 }
